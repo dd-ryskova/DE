@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Airflow
+logs/
+airflow.db
+
+# Секреты
+.env
+
+# Мусор macOS / IDE
+.DS_Store
+__MACOSX/
+.idea/
+.vscode/

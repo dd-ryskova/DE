@@ -8,16 +8,16 @@
 
 ## 📚 План обучения
 
-- [ ] SQL (базовый и продвинутый)
-- [ ] Python для обработки данных (Pandas, NumPy)
-- [ ] Основы баз данных (PostgreSQL / MySQL)
-- [ ] ETL/ELT процессы
-- [ ] Data Warehouse концепции
-- [ ] Apache Airflow
-- [ ] Big Data: Hadoop, Spark
-- [ ] Облачные платформы (AWS / GCP / Yandex Cloud)
-- [ ] Docker и основы DevOps
-- [ ] Git и командная разработка
+- [x] SQL (базовый и продвинутый)
+- [x] Python для обработки данных (Pandas, NumPy)
+- [x] Основы баз данных (PostgreSQL / MySQL)
+- [x] ETL/ELT процессы
+- [x] Data Warehouse концепции
+- [x] Apache Airflow
+- [x] Big Data: Hadoop, Spark
+- [x] Облачные платформы (AWS / GCP / Yandex Cloud)
+- [x] Docker и основы DevOps
+- [x] Git и командная разработка
 
 ## 📁 Структура репозитория
 
@@ -28,16 +28,6 @@
 ├── notes/           # конспекты и заметки
 └── README.md
 ```
-
-## 📝 Прогресс
-
-| Дата | Тема | Статус |
-|------|------|--------|
-|      |      |        |
-
-## 🔗 Полезные ресурсы
-
-- 
 
 ---
 *Репозиторий обновляется по мере обучения.*
