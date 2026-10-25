@@ -40,10 +40,21 @@ services:
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
       AIRFLOW__CORE__LOAD_EXAMPLES: "false"
       AIRFLOW__WEBSERVER__SECRET_KEY: airflow_secret
+
       AWS_ACCESS_KEY_ID: minioadmin
       AWS_SECRET_ACCESS_KEY: minioadmin123
       AWS_DEFAULT_REGION: us-east-1
       S3_ENDPOINT_URL: http://minio:9000
+      S3_USE_SSL: "false"
+
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_BATCH_SIZE: "1000"
+      POSTGRES_WRITE_PARTITIONS: "4"
+
+      TELEGRAM_BOT_TOKEN: "Введите свой"
+      TELEGRAM_CHAT_ID: "Введите свой"
+
     volumes:
       - ./dags:/opt/airflow/dags
       - ./scripts:/opt/airflow/scripts
@@ -81,11 +92,11 @@ services:
       airflow-init:
         condition: service_completed_successfully
     environment: *airflow-environment
-    ports:
-      - "8081:8080"
     volumes:
       - ./dags:/opt/airflow/dags
       - ./scripts:/opt/airflow/scripts
+    ports:
+      - "8081:8080"
     command: airflow webserver
     restart: unless-stopped
 
@@ -104,8 +115,8 @@ services:
     command: >
       bash -c "
       superset db upgrade &&
-      superset fab create-admin --username admin --password admin
-      --firstname Admin --lastname User --email admin@example.com || true;
+      (superset fab create-admin --username admin --password admin
+      --firstname Admin --lastname User --email admin@example.com || true) &&
       superset init
       "
 
